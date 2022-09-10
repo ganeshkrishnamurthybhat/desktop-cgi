@@ -5,38 +5,38 @@
 # #
 
 
-# sudo apt-get install python python3
+sudo apt-get install python python3
 
-# sudo apt install ca-certificates apt-transport-https software-properties-common lsb-release
-# sudo apt-get update && sudo apt-get upgrade
-# sudo apt-get install php
+sudo apt install ca-certificates apt-transport-https software-properties-common lsb-release
+sudo apt-get update && sudo apt-get upgrade
+sudo apt-get install php
 
-# sudo apt-get install ruby-full
+sudo apt-get install ruby-full
 
-# curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-# sudo apt-get install -y nodejs
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt-get install -y nodejs
 
-# VERSION="1.19.1"
-# ARCH="amd64"
-# curl -O -L "https://golang.org/dl/go${VERSION}.linux-${ARCH}.tar.gz"
-# wget -L "https://golang.org/dl/go${VERSION}.linux-${ARCH}.tar.gz"
-# ls -l
-# curl -sL https://golang.org/dl/ | grep -A 5 -w "go${VERSION}.linux-${ARCH}.tar.gz"
-# tar -xf "go${VERSION}.linux-${ARCH}.tar.gz"
-# ls -l
-# cd go/
-# ls -l
-# cd ..
-# sudo chown -R root:root ./go
-# sudo mv -v go /usr/local
-# echo -e "#set up Go lang path #\nexport GOPATH=$HOME/go\nexport PATH=$PATH:/usr/local/go/bin:$GOPATH/bin\n" >> ~/.bash_profile
-# source $HOME/.bash_profile
+VERSION="1.19.1"
+ARCH="amd64"
+curl -O -L "https://golang.org/dl/go${VERSION}.linux-${ARCH}.tar.gz"
+wget -L "https://golang.org/dl/go${VERSION}.linux-${ARCH}.tar.gz"
+ls -l
+curl -sL https://golang.org/dl/ | grep -A 5 -w "go${VERSION}.linux-${ARCH}.tar.gz"
+tar -xf "go${VERSION}.linux-${ARCH}.tar.gz"
+ls -l
+cd go/
+ls -l
+cd ..
+sudo chown -R root:root ./go
+sudo mv -v go /usr/local
+echo -e "#set up Go lang path #\nexport GOPATH=$HOME/go\nexport PATH=$PATH:/usr/local/go/bin:$GOPATH/bin\n" >> ~/.bash_profile
+source $HOME/.bash_profile
 
-# sudo apt update
-# sudo apt-get install default-jre
-# sudo apt-get install default-jdk
+sudo apt update
+sudo apt-get install default-jre
+sudo apt-get install default-jdk
 
-# sudo apt-get install git-all
+sudo apt-get install git-all
 
 
 # #
@@ -75,3 +75,5 @@ sudo apt-get install wine
 npm install -g prebuild
 npm install --force
 
+# # Install only if the package.json scripts are not right. It is set up already
+# npm exec --package=@electron-forge/cli -c "electron-forge import"

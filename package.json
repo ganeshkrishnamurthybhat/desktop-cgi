@@ -68,15 +68,23 @@
       "buildIdentifier": "DesktopCGI"
     }
   },
+  "build": {},
   "scripts": {
-    "setup-dev": "",
-    "setup-expressbridge": "cd ./server/express-bridge && npm install && npm link",
+    "setup:env": "chmod +x ./setupenv-debian.sh && ./setupenv-debian.sh",
+    "setup:": "chmod +x ./setupenv-debian-all.sh && ./setupenv-debian-all.sh",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "electron": "./node_modules/electron --trace-warnings .",
-    "electronbuild": "electron-forge make --platform --all",
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make"
+    "postinstall": "./node_modules/.bin/electron-builder install-app-deps",
+    "dev:e": "./node_modules/electron --trace-warnings .",
+    "dev:electron": "./node_modules/electron --trace-warnings .",
+    "forge:build": "electron-forge make --all",
+    "forge:start": "electron-forge start",
+    "forge:package": "electron-forge package",
+    "forge:make": "electron-forge make",
+    "builder:build": "npm exec electron-builder build",
+    "builder:mwl": "./node_modules/.bin/electron-builder -mwl",
+    "builder:pack": "npm exec electron-builder --dir",
+    "builder:dist": "npm exec electron-builder",
+    "rebuild:dist": "npm exec electron-rebuild"
   },
   "dependencies": {
     "cgijs": "^1.1.0",
@@ -108,6 +116,7 @@
     "@electron/build-tools": "^1.1.0",
     "chai": "4.3.6",
     "electron": "^20.1.3",
+    "electron-builder": "^23.3.3",
     "electron-installer-snap": "^5.2.0",
     "electron-installer-windows": "^3.0.0",
     "electron-installer-zip": "^0.1.2",
