@@ -104,6 +104,8 @@ dist
 .tern-port
 
 dist/*
+./out/*
+out/* 
 
 www/*/__pycache__/
 binaries/db-mysql/*
