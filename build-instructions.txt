@@ -1,0 +1,3 @@
+Build instructions:
+
+https://www.electronjs.org/docs/latest/development/build-instructions-gn
